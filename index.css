@@ -1,0 +1,47 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  border: solid black;
+}
+.logo {
+  width: 100px;
+}
+.nav-items {
+  padding: 32px 20px;
+}
+.nav-items > ul {
+  display: flex;
+  list-style-type: none;
+}
+.res-container{
+    margin: 15px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.nav-items > ul > li {
+  padding: 10px;
+  margin: 10px;
+}
+.res-card {
+  padding: 5px;
+  width: 185px;
+   
+   
+  margin: 5px;
+  
+}
+.res-card:hover {
+  cursor: pointer;
+  border: 1px solid black;
+}
+.search {
+  padding: 10px;
+}
+.res-logo {
+   
+   width: 100%;
+   height: 41%;
+    
+
+}
+

@@ -1,0 +1,37 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "namaste react by vignesh",
+  "keywords": [
+    "react",
+    "namaste",
+    "react",
+    "vignesh"
+  ],
+  "homepage": "https://github.com/vigneshrao07/Namaste-react#readme",
+  "bugs": {
+    "url": "https://github.com/vigneshrao07/Namaste-react/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vigneshrao07/Namaste-react.git"
+  },
+  "license": "ISC",
+  "author": "vignesh",
+  "type": "commonjs",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "parcel": "^2.15.2"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "browserslist":[
+    "last 2 versions"
+  ]
+}
