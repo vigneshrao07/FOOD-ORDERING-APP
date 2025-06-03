@@ -1,88 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          className="logo"
-          src="https://thumbs.dreamstime.com/b/food-delivery-logo-template-vector-icon-illustration-170869600.jpg"
-        ></img>
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About us</li>
-          <li>Contact us</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const ResturantCard = (props) => {
-  const { resData } = props;
-  const {
-    cloudinaryImageId,
-    name,
-    avgRating,
-    cuisines,
-    costForTwo,
-  
-  } = resData?.info;
-
-  return (
-    <div
-      className="res-card"
-      style={{
-        backgroundColor: "#f0f0f0",
-      }}
-    >
-      <img
-        className="res-logo"
-        src={
-          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-           cloudinaryImageId
-        }
-        alt="res-logo"
-      />
-      <h3> {name}</h3>
-      <h4> {cuisines.join(" ,")} </h4>
-      <h4> {avgRating}</h4>
-      <h4>{costForTwo} </h4>
-      <h4>{resData.info.sla.deliveryTime + " "}minutes</h4>
-    </div>
-  );
-};
-
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search">Search</div>
-      <div className="res-container">
-        {resList.map((resturant)=>(
-        <ResturantCard key={resturant.info.id} resData={resturant}/>
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const AppLayout = () => {
-  return (
-    <div className="app">
-      <Header />
-      <Body />
-    </div>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
-
-const resList = [
+ const resList = [
   
     
   {
@@ -1245,4 +1161,7 @@ const resList = [
       type: "WEBLINK",
     },
   },
-];
+]
+
+
+export default resList;
