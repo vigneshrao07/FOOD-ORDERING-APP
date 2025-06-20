@@ -29,17 +29,23 @@ const Body = () => {
 
     //optional chaining
     setListofRestaurant(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilteredRestaurant(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
-  //conditional rendring
+  // conditional rendring
   if (listofRestaurants.length === 0) {
     return <Shimmer />;
   }
+
+
+//   if (!listofRestaurants || listofRestaurants.length === 0) {
+//   return <Shimmer />;
+// }
+
 
   return (
     <>
