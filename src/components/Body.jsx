@@ -95,7 +95,7 @@ const Body = () => {
           </button>
          </div>
         </div>
-        <div className="res-container">
+        <div className="flex flex-wrap">
           {filteredRestaurant.map((resturant) => (
             <Link
               key={resturant.info.id}
