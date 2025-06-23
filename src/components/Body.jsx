@@ -12,8 +12,7 @@ const Body = () => {
   const [listofRestaurants, setListofRestaurant] = useState([]);
   const [filteredRestaurant, setFilteredRestaurant] = useState([]);
   const [searchText, setSearchText] = useState("");
-
-  console.log("body render");
+ 
 
   useEffect(() => {
     fetchData();
@@ -26,7 +25,7 @@ const Body = () => {
 
     const json = await data.json();
 
-    console.log(json);
+    
 
     //optional chaining
     setListofRestaurant(
@@ -80,20 +79,20 @@ const Body = () => {
               Search
             </button>
           </div>
-              
-         <div className="m-4 p-4 flex items-center" >
+
+          <div className="m-4 p-4 flex items-center">
             <button
-            className="px-4 py-2 bg-gray-300 rounded-xl"
-            onClick={() => {
-              const filteredList = listofRestaurants.filter(
-                (res) => res.info.avgRating > 4
-              );
-              setListofRestaurant(filteredList);
-            }}
-          >
-            Top rated resturants
-          </button>
-         </div>
+              className="px-4 py-2 bg-gray-300 rounded-xl"
+              onClick={() => {
+                const filteredList = listofRestaurants.filter(
+                  (res) => res.info.avgRating > 4
+                );
+                setListofRestaurant(filteredList);
+              }}
+            >
+              Top rated resturants
+            </button>
+          </div>
         </div>
         <div className="flex flex-wrap">
           {filteredRestaurant.map((resturant) => (
