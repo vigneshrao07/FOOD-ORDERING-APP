@@ -9,8 +9,9 @@ const RestaurantCategory = ({ data }) => {
           </span>
           <span>🔽</span>
         </div>
-     
-            <ItemList  items={data.itemCards}  />
+     {/* <ItemList  items={data.itemCards}/> */}
+    
+        
       </div>
     </div>
   );
@@ -18,4 +19,4 @@ const RestaurantCategory = ({ data }) => {
 
 export default RestaurantCategory;
 
-// 
+// items={data.itemCards}
