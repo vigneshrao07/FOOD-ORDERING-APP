@@ -1,4 +1,4 @@
-import ItemList from "./itemList";
+//  import  ItemList from "../components/ItemList.jsx"
 const RestaurantCategory = ({ data }) => {
   return (
     <div>
