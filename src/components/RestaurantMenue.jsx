@@ -61,15 +61,7 @@ const ResturantMenue = () => {
       <p className="font-bold text-lg">
         {cuisines.join(", ")}-{costForTwoMessage}
       </p>
-      {/* <h2>Menue</h2>
-      <ul>
-        {itemCards.map((item) => (
-          <li key={item.card.info.id}>
-            {item.card.info.name}-{"Rs"}
-            {item.card.info.price / 100 || item.card.info.defaultPrice / 100}
-          </li>
-        ))}
-      </ul> */}
+      
       {categories.map((category) => (
         <RestaurantCategory   data={category?.card?.card} />
       ))}
