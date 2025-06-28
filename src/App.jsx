@@ -1,5 +1,5 @@
 import React from "react";
-import { lazy , Suspense} from "react";
+import { lazy, Suspense } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
@@ -8,23 +8,33 @@ import ResturantCard from "./components/ResturantCard";
 import ResturantMenue from "./components/RestaurantMenue";
 // import About from "./components/About";
 import Error from "./components/Error";
- 
+import UserContext from "./utils/UserContext";
+import { useState, useEffect } from "react";
 
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
- 
- 
 
 const Grocery = lazy(() => import("./components/Grocery"));
 
-const About = lazy (() => import("./components/About"));
+const About = lazy(() => import("./components/About"));
 
 const AppLayout = () => {
-  return (
-    <div className="app">
-      <Header />
+  const [userName, setUserName] = useState();
 
-      <Outlet />
-    </div>
+  useEffect(() => {
+    const data = {
+      name: "Vignesh Rao",
+    };
+    setUserName(data.name);
+  }, []);
+
+  return (
+    <UserContext.Provider value={{ loggedInUser: userName }}>
+      <div className="app">
+        <Header />
+
+        <Outlet />
+      </div>
+    </UserContext.Provider>
   );
 };
 
@@ -40,8 +50,12 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/about",
-        element:  <Suspense fallback={<h1>Loading page........</h1>
-        }> <About /> </Suspense>
+        element: (
+          <Suspense fallback={<h1>Loading page........</h1>}>
+            {" "}
+            <About />{" "}
+          </Suspense>
+        ),
       },
       {
         path: "/contact",
@@ -49,8 +63,11 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/Grocery",
-        element:  <Suspense fallback={<h1>Loading page........</h1>
-        }><Grocery /></Suspense>
+        element: (
+          <Suspense fallback={<h1>Loading page........</h1>}>
+            <Grocery />
+          </Suspense>
+        ),
       },
       {
         path: "/restaurants/:resId",
